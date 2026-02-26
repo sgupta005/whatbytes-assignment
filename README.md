@@ -4,11 +4,38 @@ A RESTful healthcare backend API built with **Django REST Framework** and **JWT 
 
 ---
 
+## 🚀 Live Deployment
+
+The API is deployed on **AWS (EC2 + RDS PostgreSQL + Nginx + Gunicorn)** and is publicly accessible:
+
+**Base URL:** `http://3.110.158.67`
+
+### Quick Test
+
+You can test the API immediately with these pre-seeded credentials:
+
+| Field | Value |
+|-------|-------|
+| **Username** | `testuser` |
+| **Password** | `TestPass123!` |
+
+```bash
+# Login to get a JWT token
+curl -X POST http://3.110.158.67/api/auth/login/ \
+  -H "Content-Type: application/json" \
+  -d '{"username": "testuser", "password": "TestPass123!"}'
+```
+
+> A ready-to-import **Postman collection** is available in the repository as `postman_collection.json`.
+
+---
+
 ## Tech Stack
 
 - **Framework**: Django + Django REST Framework
 - **Auth**: JWT via `djangorestframework-simplejwt`
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL (AWS RDS)
+- **Server**: Gunicorn + Nginx on AWS EC2
 
 ---
 
@@ -180,3 +207,32 @@ python manage.py runserver
 | `DEBUG` | Debug mode (`True`/`False`) |
 | `DATABASE_URL` | PostgreSQL connection string |
 | `ALLOWED_HOSTS` | Comma-separated allowed hosts |
+
+### Seed Sample Data
+
+To populate the database with a test user, sample patients, doctors, and mappings:
+
+```bash
+python manage.py seed_data
+```
+
+This creates:
+- **User:** `testuser` / `TestPass123!`
+- **3 Patients:** Amit Patel, Sneha Kapoor, Rohan Gupta
+- **3 Doctors:** Dr. Priya Sharma (Cardiologist), Dr. Rajan Mehta (Neurologist), Dr. Sunita Verma (GP)
+- **4 Mappings** linking patients to their assigned doctors
+
+The command is idempotent — safe to run multiple times.
+
+---
+
+## Postman Collection
+
+A ready-to-import Postman collection is included at `postman_collection.json`.
+
+**How to use:**
+1. Open Postman → **Import** → select `postman_collection.json`
+2. Run **Auth → Login** — the access token is saved automatically
+3. All other requests use the token automatically via collection variables
+
+The collection points to the live server (`http://3.110.158.67`) by default.
