@@ -16,14 +16,14 @@ You can test the API immediately with these pre-seeded credentials:
 
 | Field | Value |
 |-------|-------|
-| **Username** | `testuser` |
-| **Password** | `TestPass123!` |
+| **Username** | `test` |
+| **Password** | `test@123` |
 
 ```bash
 # Login to get a JWT token
 curl -X POST http://3.110.158.67/api/auth/login/ \
   -H "Content-Type: application/json" \
-  -d '{"username": "testuser", "password": "TestPass123!"}'
+  -d '{"username": "test", "password": "test@123"}'
 ```
 
 > A ready-to-import **Postman collection** is available in the repository as `postman_collection.json`.
@@ -207,24 +207,6 @@ python manage.py runserver
 | `DEBUG` | Debug mode (`True`/`False`) |
 | `DATABASE_URL` | PostgreSQL connection string |
 | `ALLOWED_HOSTS` | Comma-separated allowed hosts |
-
-### Seed Sample Data
-
-To populate the database with a test user, sample patients, doctors, and mappings:
-
-```bash
-python manage.py seed_data
-```
-
-This creates:
-- **User:** `testuser` / `TestPass123!`
-- **3 Patients:** Amit Patel, Sneha Kapoor, Rohan Gupta
-- **3 Doctors:** Dr. Priya Sharma (Cardiologist), Dr. Rajan Mehta (Neurologist), Dr. Sunita Verma (GP)
-- **4 Mappings** linking patients to their assigned doctors
-
-The command is idempotent — safe to run multiple times.
-
----
 
 ## Postman Collection
 
