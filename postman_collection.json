@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "whatbytes-healthcare-api",
 		"name": "WhatBytes Healthcare API",
-		"description": "Complete API collection for the WhatBytes Healthcare Backend.\n\n## Getting Started\n1. Run the **Login** request (Auth → Login)\n2. The `access_token` variable will be auto-set\n3. All authenticated requests will use it automatically\n\n**Live Server:** http://3.110.158.67\n\n**Test Credentials:**\n- Username: `testuser`\n- Password: `TestPass123!`",
+		"description": "Complete API collection for the WhatBytes Healthcare Backend.\n\n## Getting Started\n1. Run the **Login** request (Auth → Login)\n2. The `access_token` variable will be auto-set\n3. All authenticated requests will use it automatically\n\n**Live Server:** http://3.110.158.67\n\n**Test Credentials:**\n- Username: `test`\n- Password: `test@123`",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"variable": [
