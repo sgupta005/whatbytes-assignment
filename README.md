@@ -1,3 +1,7 @@
+## ✅ LIVE DEPLOYMENT (AWS)
+
+> **Base URL (click to open):** `http://3.110.158.67`
+
 # WhatBytes Healthcare Backend API
 
 A RESTful healthcare backend API built with **Django REST Framework** and **JWT authentication**. It allows users to manage patients, doctors, and their mappings.
@@ -6,9 +10,7 @@ A RESTful healthcare backend API built with **Django REST Framework** and **JWT 
 
 ## 🚀 Live Deployment
 
-The API is deployed on **AWS (EC2 + RDS PostgreSQL + Nginx + Gunicorn)** and is publicly accessible:
-
-**Base URL:** `http://3.110.158.67`
+The API is deployed on **AWS (EC2 + RDS PostgreSQL + Nginx + Gunicorn)** and is publicly accessible at the base URL highlighted at the top of this document.
 
 ### Quick Test
 
